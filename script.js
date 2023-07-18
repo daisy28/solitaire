@@ -1,8 +1,3 @@
-// type cardDeck = {
-//      cards: string[];
-//      suits: string[];
-//      ranks: string[];
-// }
 var CardDeck = /** @class */ (function () {
     function CardDeck() {
         this.cards = [];
@@ -18,19 +13,23 @@ var CardDeck = /** @class */ (function () {
                 this.cards.push("".concat(rank, " ").concat(suit));
             }
         }
+        // return this;
     };
     CardDeck.prototype.shuffle = function () {
-        var _a;
         for (var i = this.cards.length - 1; i > 0; i--) {
-            var j = Math.floor(Math.random() * (i + 1));
-            return _a = [this.cards[j], this.cards[i]], this.cards[i] = _a[0], this.cards[j] = _a[1], _a;
+            var num = Math.floor(Math.random() * (i + 1));
+            console.log(num);
+            // console.log(this.cards[num])
+            // return [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]]
         }
     };
     return CardDeck;
 }());
 var newCard = new CardDeck();
-console.log(newCard);
+// newCard.shuffle()
+// console.log(newCard);
+// console.log(newCard.generateCards());
 console.log(newCard.shuffle());
-console.log(newCard.shuffle());
-console.log(newCard.shuffle());
+// console.log(newCard.shuffle());
+// console.log(newCard.shuffle());
 // console.log(newCard.cards);
