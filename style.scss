@@ -6,3 +6,41 @@
      text-decoration: none;
      font-family: roboto, sans-serif;
 }
+
+body {
+     padding: .5rem;
+}
+
+.delt-card-container,
+.hidden-card-container {
+     margin: 2rem auto;
+     width: 100%;
+     color: rgb(5, 82, 52);
+     padding: 1rem;
+}
+
+#delt-card-div,
+#hidden-card-div {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     flex-wrap: wrap;
+}
+
+.hidden-card-container {
+     color: crimson;
+}
+
+.cards {
+     width: 120px;
+     height: 180px;
+     border-radius: 10px;
+     border: 2px solid #afacac;
+     padding: 1rem;
+     margin-bottom: .5rem;
+}
+
+.card_category {
+     margin-bottom: .8rem;
+     // font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

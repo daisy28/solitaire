@@ -1,6 +1,10 @@
+var deltCardsDiv = document.querySelector("#delt-card-div");
+var hiddenCardsDiv = document.querySelector("#hidden-card-div");
 var CardDeck = /** @class */ (function () {
     function CardDeck() {
         this.cards = [];
+        this.deltCards = [];
+        this.hiddenCards = [];
         this.suits = ["Clubs", "Diamonds", "Hearts", "Spades"];
         this.ranks = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
         this.generateCards();
@@ -13,23 +17,34 @@ var CardDeck = /** @class */ (function () {
                 this.cards.push("".concat(rank, " ").concat(suit));
             }
         }
-        // return this;
     };
-    CardDeck.prototype.shuffle = function () {
-        for (var i = this.cards.length - 1; i > 0; i--) {
-            var num = Math.floor(Math.random() * (i + 1));
-            console.log(num);
-            // console.log(this.cards[num])
-            // return [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]]
-        }
+    CardDeck.prototype.shuffleCard = function () {
+        packOfCards.cards.sort(function () { return Math.random() - 0.5; });
+        return this;
+    };
+    CardDeck.prototype.dealDeltCards = function () {
+        this.deltCards.push(packOfCards.cards.slice(0, 28));
+        return this;
+    };
+    CardDeck.prototype.dealHiddenCards = function () {
+        this.hiddenCards.push(packOfCards.cards.slice(28, 52));
+        return this;
     };
     return CardDeck;
 }());
-var newCard = new CardDeck();
-// newCard.shuffle()
-// console.log(newCard);
-// console.log(newCard.generateCards());
-console.log(newCard.shuffle());
-// console.log(newCard.shuffle());
-// console.log(newCard.shuffle());
-// console.log(newCard.cards);
+var packOfCards = new CardDeck();
+packOfCards.shuffleCard().dealDeltCards().dealHiddenCards();
+console.log(packOfCards);
+var renderCard = function () {
+    var deltCardTemplate = "";
+    var hiddenCardTemplate = "";
+    packOfCards.deltCards[0].map(function (card) {
+        deltCardTemplate += "<div class=\"cards\">".concat(card, "</div>");
+    });
+    packOfCards.hiddenCards[0].map(function (card) {
+        hiddenCardTemplate += "<div class=\"cards\">".concat(card, "</div>");
+    });
+    deltCardsDiv.innerHTML += deltCardTemplate;
+    hiddenCardsDiv.innerHTML = hiddenCardTemplate;
+};
+renderCard();
