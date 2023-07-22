@@ -57,3 +57,16 @@ const renderCard = () => {
 }
 
 renderCard();
+
+
+const moveCards = () => {
+     packOfCards.cards.forEach(card => {
+          console.log(card)
+     })
+}
+
+moveCards()
+
+
+
+

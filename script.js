@@ -48,3 +48,9 @@ var renderCard = function () {
     hiddenCardsDiv.innerHTML = hiddenCardTemplate;
 };
 renderCard();
+var moveCards = function () {
+    packOfCards.cards.forEach(function (card) {
+        console.log(card);
+    });
+};
+moveCards();
