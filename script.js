@@ -39,18 +39,27 @@ var renderCard = function () {
     var deltCardTemplate = "";
     var hiddenCardTemplate = "";
     packOfCards.deltCards[0].map(function (card) {
-        deltCardTemplate += "<div class=\"cards\">".concat(card, "</div>");
+        deltCardTemplate += "<div draggable=\"true\" class=\"cards\">".concat(card, "</div>");
     });
     packOfCards.hiddenCards[0].map(function (card) {
         hiddenCardTemplate += "<div class=\"cards\">".concat(card, "</div>");
     });
-    deltCardsDiv.innerHTML += deltCardTemplate;
-    hiddenCardsDiv.innerHTML = hiddenCardTemplate;
+    var a, b;
+    var position = "";
+    for (a = 1; a <= 8; a++) {
+        for (b = 1; b < a; b++) {
+            position = deltCardTemplate;
+        }
+        deltCardsDiv.innerHTML = position;
+        position = "";
+    }
+    // console.log(deltCardTemplate)
+    // hiddenCardsDiv.innerHTML = hiddenCardTemplate;
+    // // moveCards(deltCardsDiv);
+    // Array.from(deltCardsDiv.children).forEach(card => {
+    //      card.addEventListener("click", () => {
+    //           console.log("clicked")
+    //      })
+    // })
 };
 renderCard();
-var moveCards = function () {
-    packOfCards.cards.forEach(function (card) {
-        console.log(card);
-    });
-};
-moveCards();
