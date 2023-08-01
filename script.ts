@@ -50,16 +50,18 @@ const renderCard = () => {
      });
      packOfCards.hiddenCards[0].map(card => {
           hiddenCardTemplate += `<div class="cards">${card}</div>`;
+          // console.log(hiddenCardTemplate);
      });
 
      let a, b;
      let position: string = ``;
-     for (a = 1; a <= 8; a++){
+     for (a = 1; a < 8; a++){
           for (b = 1; b < a; b++){
-               position = deltCardTemplate;
+               // position = deltCardTemplate;
+               // console.log(position)
+               deltCardsDiv.innerHTML = deltCardTemplate;
           }
-          deltCardsDiv.innerHTML = position;
-          position = ``
+          // deltCardsDiv.innerHTML = ``
      }
      // console.log(deltCardTemplate)
      // hiddenCardsDiv.innerHTML = hiddenCardTemplate;
