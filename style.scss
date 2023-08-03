@@ -11,6 +11,20 @@ body {
   padding: 0.5rem;
 }
 
+.game_detail {
+  display: flex;
+  justify-content: space-between;
+  color: brown;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 1.5rem 3.2rem;
+}
+
+.card_destination {
+  display: flex;
+  width: 200px;
+}
+
 .delt-card-container,
 .hidden-card-container {
   display: flex;
@@ -27,7 +41,6 @@ body {
   transform: rotate(180deg);
   position: relative;
   top: 9rem;
-  // width: 100%;
 }
 
 .hidden-card-container {
