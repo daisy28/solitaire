@@ -17,12 +17,29 @@ body {
   color: brown;
   font-size: 1.3rem;
   font-weight: 500;
-  padding: 1.5rem 3.2rem;
+  width: 1073px;
+  margin: auto;
+  padding: 1.5rem 0;
 }
 
 .card_destination {
+  width: 1073px;
+  margin: auto;
   display: flex;
-  width: 200px;
+  align-items: center;
+}
+
+.played_cards {
+  width: 60px;
+  height: 80px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 900;
+  background-color: #afacac5f;
+  margin-right: .5rem;
 }
 
 .delt-card-container,
@@ -56,10 +73,11 @@ body {
   padding: 1rem;
   position: relative;
   margin-bottom: -9rem;
-  margin-left: 1rem;
+  margin-left: .2rem;
   background-color: coral;
   z-index: 3;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .card_category {

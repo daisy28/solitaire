@@ -36,12 +36,15 @@ var CardDeck = /** @class */ (function () {
 var packOfCards = new CardDeck();
 packOfCards.shuffleCard().dealDeltCards().dealHiddenCards();
 console.log(packOfCards);
+for (var i = 0; i < packOfCards.cards.length / 13; i++) {
+    cardDestination.innerHTML += "<div class=\"played_cards\">A</div>";
+}
 var renderCard = function () {
     var hiddenCardTemplate = "";
     var deltCardTemplate = "";
     for (var a = 0; a < 9; a++) {
         for (var b = 1; b < a; b++) {
-            deltCardTemplate += "<div class=\"cards\">".concat(packOfCards.deltCards[0].pop(), "</div>");
+            deltCardTemplate += "<div draggable=\"true\" class=\"cards\">".concat(packOfCards.deltCards[0].pop(), "</div>");
         }
         deltCardTemplate += "<br />";
         deltCardsDiv.innerHTML = deltCardTemplate;

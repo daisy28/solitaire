@@ -43,14 +43,16 @@ const packOfCards = new CardDeck();
 packOfCards.shuffleCard().dealDeltCards().dealHiddenCards();
 console.log(packOfCards);
 
-
+for (let i = 0; i < packOfCards.cards.length / 13; i++){
+     cardDestination.innerHTML += `<div class="played_cards">A</div>`
+}
 
 const renderCard = () => {
      let hiddenCardTemplate = ``;
      let deltCardTemplate = ``;
      for (let a = 0; a < 9; a++){
           for (let b = 1; b < a; b++){
-               deltCardTemplate +=`<div class="cards">${packOfCards.deltCards[0].pop()}</div>`;
+               deltCardTemplate +=`<div draggable="true" class="cards">${packOfCards.deltCards[0].pop()}</div>`;
           }
           deltCardTemplate += `<br />`;
           deltCardsDiv.innerHTML = deltCardTemplate;
