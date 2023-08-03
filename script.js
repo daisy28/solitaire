@@ -1,5 +1,6 @@
 var deltCardsDiv = document.querySelector("#delt-card-div");
 var hiddenCardsDiv = document.querySelector("#hidden-card-div");
+var cardDestination = document.querySelector(".card_destination");
 var CardDeck = /** @class */ (function () {
     function CardDeck() {
         this.cards = [];
@@ -49,24 +50,5 @@ var renderCard = function () {
         hiddenCardTemplate += "<div class=\"cards\">".concat(card, "</div>");
         // console.log(hiddenCardTemplate);
     });
-    // let a, b;
-    // let position: string = ``;
-    // for (a = 1; a < 9; a++){
-    //      for (b = 1; b < a; b++){
-    //           position += `*`
-    //           // console.log(position)
-    //      }
-    //      position += `<br />`
-    //           deltCardsDiv.innerHTML = position;
-    //           // deltCardsDiv.innerHTML = ``;
-    // }
-    // console.log(deltCardTemplate)
-    // hiddenCardsDiv.innerHTML = hiddenCardTemplate;
-    // // moveCards(deltCardsDiv);
-    // Array.from(deltCardsDiv.children).forEach(card => {
-    //      card.addEventListener("click", () => {
-    //           console.log("clicked")
-    //      })
-    // })
 };
 renderCard();
