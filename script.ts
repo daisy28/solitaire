@@ -42,46 +42,16 @@ const packOfCards = new CardDeck();
 packOfCards.shuffleCard().dealDeltCards().dealHiddenCards();
 console.log(packOfCards);
 
-const deltCard = () => {
-     let cards = ``;
-     packOfCards.deltCards[0].map(card => {
-          cards += card;
-     });
-     return cards;
-}
-
-// console.log(deltCard())
-
 const renderCard = () => {
      let hiddenCardTemplate = "";
      let deltCardTemplate = ``;
-     for (let a = 0; a < packOfCards.deltCards[0].length - 350; a++){
+     for (let a = 0; a < 9; a++){
           for (let b = 1; b < a; b++){
-               deltCardTemplate = packOfCards.deltCards[0].join(" ");
-               console.log(deltCardTemplate)
+               deltCardTemplate +=`<div class="cards">${packOfCards.deltCards[0].pop()}</div>`;
           }
-               // deltCardTemplate = `<br />`;
-               deltCardsDiv.innerHTML = deltCardTemplate;
+          deltCardTemplate += `<br />`;
+          deltCardsDiv.innerHTML = deltCardTemplate;
      }
-
-     
-
-
-
-     // packOfCards.deltCards[0].map(card => {
-     //      let deltCardTemplate = ``;
-     // for (let a = 1; a < 4; a++){
-     //      for (let b = 1; b < a; b++){
-     //           deltCardTemplate += `*`;
-     //           // console.log(card)
-     //           // console.log(deltCardTemplate)
-     //      }
-     //      deltCardTemplate += `<br />`
-     //           console.log(card)
-
-     //           deltCardsDiv.innerHTML = deltCardTemplate;
-     // }
-     // });
      packOfCards.hiddenCards[0].map(card => {
           hiddenCardTemplate += `<div class="cards">${card}</div>`;
           // console.log(hiddenCardTemplate);
