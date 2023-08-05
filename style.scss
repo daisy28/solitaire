@@ -8,23 +8,43 @@
 }
 
 body {
-  padding: 0.5rem;
+  padding: 1rem;
+}
+
+.background {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/assests/images (1).jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  z-index: -10;
 }
 
 .game_detail {
   display: flex;
   justify-content: space-between;
-  color: brown;
+  color: #afacac;
   font-size: 1.3rem;
   font-weight: 500;
-  width: 1073px;
+  width: 100%;
   margin: auto;
   padding: 1.5rem 0;
 }
 
 .card_destination {
-  width: 1073px;
-  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.played_card_destinaton{
   display: flex;
   align-items: center;
 }
@@ -38,36 +58,29 @@ body {
   align-items: center;
   font-size: 2rem;
   font-weight: 900;
-  background-color: #afacac5f;
+  background-color: #afacac39;
   margin-right: .5rem;
+  color: #afacac;
 }
 
-.delt-card-container,
-.hidden-card-container {
+.delt_card_container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 2rem auto;
-  width: 100%;
+  align-items: flex-start;
   color: rgb(5, 82, 52);
-  padding: 1rem;
+  padding: 1rem 0;
 }
 
-#delt-card-div,
-#hidden-card-div {
+#delt_card_div {
   transform: rotate(180deg);
   position: relative;
   top: 9rem;
 }
 
-.hidden-card-container {
-  color: crimson;
-}
-
 .cards {
   display: inline-flex;
-  width: 150px;
-  height: 180px;
+  width: 100px;
+  height: 150px;
   border-radius: 10px;
   border: 2px solid #afacac;
   padding: 1rem;
@@ -78,6 +91,24 @@ body {
   z-index: 3;
   transform: rotate(180deg);
   cursor: pointer;
+}
+
+#hidden_card_div {
+  width: 100px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.hidden_cards {
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  border: 2px solid #afacac;
+  padding: 1rem;
+  position: relative;
+  cursor: pointer;
+  background-color: coral;
+  color: rgb(5, 82, 52);
 }
 
 .card_category {

@@ -1,5 +1,5 @@
-const deltCardsDiv: Element = document.querySelector("#delt-card-div")!;
-const hiddenCardsDiv: Element = document.querySelector("#hidden-card-div")!;
+const deltCardDiv: Element = document.querySelector("#delt_card_div")!;
+const hiddenCardDiv: Element = document.querySelector("#hidden_card_div")!;
 const cardDestination: Element = document.querySelector(".card_destination")!;
 
 class CardDeck {
@@ -44,7 +44,8 @@ packOfCards.shuffleCard().dealDeltCards().dealHiddenCards();
 console.log(packOfCards);
 
 for (let i = 0; i < packOfCards.cards.length / 13; i++){
-     cardDestination.innerHTML += `<div class="played_cards">A</div>`
+     const playedCard: Element = cardDestination.querySelector(".played_card_destinaton")!;
+     playedCard.innerHTML += `<div class="played_cards">A</div>`
 }
 
 const renderCard = () => {
@@ -55,11 +56,12 @@ const renderCard = () => {
                deltCardTemplate +=`<div draggable="true" class="cards">${packOfCards.deltCards[0].pop()}</div>`;
           }
           deltCardTemplate += `<br />`;
-          deltCardsDiv.innerHTML = deltCardTemplate;
+          deltCardDiv.innerHTML = deltCardTemplate;
      }
      packOfCards.hiddenCards[0].map(card => {
-          hiddenCardTemplate += `<div class="cards">${card}</div>`;
-          // console.log(hiddenCardTemplate);
+          hiddenCardTemplate += `<div draggable="true" class="hidden_cards">${card}</div>`;
+          hiddenCardDiv.innerHTML = hiddenCardTemplate;
+          cardDestination.append(hiddenCardDiv);
      });
 }
 
