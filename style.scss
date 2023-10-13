@@ -26,6 +26,36 @@ body {
   z-index: -10;
 }
 
+.delt_card_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: rgb(5, 82, 52);
+  padding: 1rem 0;
+}
+
+#delt_card_div {
+  transform: rotate(180deg);
+  position: relative;
+  top: 9rem;
+}
+
+.cards {
+  display: inline-flex;
+  width: 100px;
+  height: 150px;
+  border-radius: 10px;
+  border: 2px solid #afacac;
+  padding: 1rem;
+  position: relative;
+  margin-bottom: -9rem;
+  margin-left: .2rem;
+  background-color: coral;
+  z-index: 3;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
 .game_detail {
   display: flex;
   justify-content: space-between;
