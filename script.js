@@ -1,4 +1,4 @@
-thyvar deltCardDiv = document.querySelector("#delt_card_div");
+var deltCardDiv = document.querySelector("#delt_card_div");
 var hiddenCardDiv = document.querySelector("#hidden_card_div");
 var cardDestination = document.querySelector(".card_destination");
 var CardDeck = /** @class */ (function () {
@@ -40,24 +40,6 @@ for (var i = 0; i < packOfCards.cards.length / 13; i++) {
     var playedCard = cardDestination.querySelector(".played_card_destinaton");
     playedCard.innerHTML += "<div class=\"played_cards\">A</div>";
 }
-var renderCard = function () {
-    var hiddenCardTemplate = "";
-    var deltCardTemplate = "";
-    for (var a = 0; a < 9; a++) {
-        for (var b = 1; b < a; b++) {
-            deltCardTemplate += "<div draggable=\"true\" class=\"cards\">".concat(packOfCards.deltCards[0].pop(), "</div>");
-        }
-        deltCardTemplate += "<br />";
-        deltCardDiv.innerHTML = deltCardTemplate;
-    }
-    packOfCards.hiddenCards[0].map(function (card) {
-        hiddenCardTemplate += "<div draggable=\"true\" class=\"hidden_cards\">".concat(card, "</div>");
-        hiddenCardDiv.innerHTML = hiddenCardTemplate;
-        cardDestination.append(hiddenCardDiv);
-    });
-};
-renderCard();
-
 var renderCard = function () {
     var hiddenCardTemplate = "";
     var deltCardTemplate = "";
